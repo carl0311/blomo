@@ -1,0 +1,54 @@
+{
+  "name": "blomo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A small cross-platform notes app",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --pretty",
+    "desktop:dev": "npm run build && electron .",
+    "desktop:build": "npm run build && electron-builder --win nsis",
+    "android:add": "cap add android",
+    "android:sync": "npm run build && cap sync android",
+    "android:open": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/browser": "^7.0.5",
+    "@capacitor/core": "^7.4.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.5"
+  },
+  "build": {
+    "appId": "com.blomo.notes",
+    "productName": "Blomo",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/main.cjs",
+      "electron/preload.cjs",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

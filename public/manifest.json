@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Blomo 随手记",
+  "version": "0.1.0",
+  "description": "快速记录想法，并在设备间同步。",
+  "action": {
+    "default_title": "Blomo 随手记",
+    "default_popup": "extension.html"
+  },
+  "host_permissions": [
+    "https://api.dropboxapi.com/*",
+    "https://content.dropboxapi.com/*",
+    "https://www.dropbox.com/*"
+  ]
+}
