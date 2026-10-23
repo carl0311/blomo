@@ -12,7 +12,9 @@
     "desktop:build": "npm run build && electron-builder --win nsis",
     "android:add": "cap add android",
     "android:sync": "npm run build && cap sync android",
-    "android:open": "cap open android"
+    "android:build": "npm run android:sync && node scripts/build-android.mjs",
+    "android:open": "cap open android",
+    "extension:build": "npm run build && node scripts/package-extension.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",

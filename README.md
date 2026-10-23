@@ -43,18 +43,19 @@ npm run desktop:build
 ```sh
 npm run android:add
 npm run android:sync
+npm run android:build
 npm run android:open
 ```
 
-在 Android Studio 中构建 APK。首次运行 `android:add` 后会生成 `android/` 原生项目；该目录不提交到版本库。
+`npm run android:build` 会构建可安装的 Debug APK，并输出到 `release/blomo-android.apk`。首次运行 `android:add` 后会生成 `android/` 原生项目；该目录不提交到版本库。
 
 ## Chrome / Edge 扩展
 
 ```sh
-npm run build
+npm run extension:build
 ```
 
-在浏览器扩展管理页开启开发者模式，选择“加载已解压的扩展程序”，然后选择 `dist/`。Chrome 和 Edge 共用 Manifest V3 扩展。
+扩展文件会输出到 `release/extension/`。在浏览器扩展管理页开启开发者模式，选择“加载已解压的扩展程序”，然后选择该目录。Chrome 和 Edge 共用 Manifest V3 扩展。
 
 ## 配置 Dropbox
 
